@@ -7,7 +7,7 @@
 
     </div>
     <div class="col-md-2">
-        <button class="preview-btn" (click)="preview()">Preview</button>
+        <button class="preview-btn" (click)="open(content)">Preview</button>
     </div>
 </div>
 
@@ -48,11 +48,37 @@
                 </div>
             </div><br>
             </form>
-        
-            <!-- <pre>{{myForm.value | json}}</pre> -->
-
       </div>
     </div>
   </div>
   
+
+  <!-- Modal window -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" 
+            id="modal-basic-title">
+            Preview
+        </h4>
+        <button type="button" class="close"
+                aria-label="Close" (click)=
+                "modal.dismiss('Cross click')">
   
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div *ngFor="let formfield of arr">
+            <div *ngIf="formfield == 'textbox'">
+                <input type="textbox" placeholder="textbox" style="margin-bottom:10px" class="form-control" />
+            </div>
+            <div *ngIf="formfield == 'dropdown'">
+                <div class="dropdown" style="margin-bottom:10px">
+                    <button class="btn dropdown-toggle" style="width:100%;text-align: right;" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
