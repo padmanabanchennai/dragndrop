@@ -6,7 +6,7 @@
     <div class="col-md-8">
 
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2" style="padding-left:100px">
         <button class="preview-btn" (click)="open(content)">Preview</button>
     </div>
 </div>
@@ -33,7 +33,7 @@
   
     <div class="col-md-10">
       <div class="row">
-        <div class="col-md-10 offset-2">Drag and Drop the controls from left to right to create form</div>
+        <div class="col-md-10" style="padding-left: 22px;padding-bottom: 6px;">Drag and Drop the controls from left to right to create form</div>
       </div>
       <div class="row" id="drop-div" (drop)="drop($event)" (dragover)="allowDrop($event)"
        style="border-style: dotted;margin-left: 5px;margin-right: 45px;height:100%;padding-top:20px">
@@ -43,7 +43,7 @@
                 <div *ngFor="let comp of myForm.get('formfields')['controls']; let i=index">
                 <div [formGroupName]="i">
                     <input disabled formControlName="formfield" style=" width: 96%;margin-left: 2%;margin-bottom:1%"/>
-                    <span style="margin-left: -25px;font-weight: bold;" (click)="deleteFormField(i)">X</span>
+                    <span style="margin-left: -25px;font-weight: bold;cursor: pointer;" (click)="deleteFormField(i)">X</span>
                 </div>
                 </div>
             </div><br>
@@ -74,7 +74,7 @@
             </div>
             <div *ngIf="formfield == 'dropdown'">
                 <div class="dropdown" style="margin-bottom:10px">
-                    <button class="btn dropdown-toggle" style="width:100%;text-align: right;" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" style="width:100%;text-align: right;" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       
                     </button>
                   </div>

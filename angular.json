@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "dragndrop"
+  "defaultProject": "dragndrop",
+  "cli": {
+    "analytics": "5dd56334-e817-4942-9bea-e4358c025b8f"
+  }
 }
