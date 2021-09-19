@@ -1,0 +1,13 @@
+.header{
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+.preview-btn{
+    border-radius: 10%;
+}
+
+ 
+.border-line {
+    border-right: 1px solid #000;
+}

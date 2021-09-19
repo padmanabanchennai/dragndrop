@@ -1,0 +1,58 @@
+
+<div class="row header">
+    <div class="col-md-2">
+        Angular Machine Test B
+    </div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-2">
+        <button class="preview-btn" (click)="preview()">Preview</button>
+    </div>
+</div>
+
+<hr class="solid">
+
+
+<div class="row" >
+    <div class="col-md-2 border-line" style="height:100vh">
+      <div class="row ">
+        <div class="col-md-2 offset-2">Controls</div>
+      </div>
+      <br>
+      <div class="row">
+        <div id="textbox" draggable="true" (dragstart)="drag($event)" class="col-md-2 offset-2"><button class="preview-btn">TextBox</button></div>
+      </div>
+      <br>
+      <div class="row">
+        <div id="dropdown" draggable="true" (dragstart)="drag($event)" class="col-md-2 offset-2"><button class="preview-btn">Dropdown</button></div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-10 offset-2">Drag and Drop the controls from left to right to create form</div>
+      </div>
+      <div class="row" id="drop-div" (drop)="drop($event)" (dragover)="allowDrop($event)"
+       style="border-style: dotted;margin-left: 5px;margin-right: 45px;height:100%;padding-top:20px">
+               
+        <form [formGroup]="myForm" style="width:100%">
+            <div formArrayName="formfields">
+                <div *ngFor="let comp of myForm.get('formfields')['controls']; let i=index">
+                <div [formGroupName]="i">
+                    <input disabled formControlName="formfield" style=" width: 96%;margin-left: 2%;margin-bottom:1%"/>
+                    <span style="margin-left: -25px;font-weight: bold;" (click)="deleteFormField(i)">X</span>
+                </div>
+                </div>
+            </div><br>
+            </form>
+        
+            <!-- <pre>{{myForm.value | json}}</pre> -->
+
+      </div>
+    </div>
+  </div>
+  
+  
